@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    <div class="clock">
+        <h1 id="time"></h1>
+    </div>
     <div class="form-container">
-        <form id="checkin-form">
+        <form action="{% url 'punch_page' %}" id="checkin-form" method="POST">
+            {% csrf_token %}
             <h2>EMPLOYEE'S NAME</h2>
-            <input type="text" id="employee-name" placeholder="NAME" required>
-            <button type="button" id="checkin-btn">Check In</button>
+            <input type="text" name="employee_name" id="employee-name" placeholder="NAME" required>
+            <button type="submit" id="checkin-btn">Check In</button>
             <p>Login as admin click: <a href="#" id="show-login">ENTER</a></p>
         </form>
 
