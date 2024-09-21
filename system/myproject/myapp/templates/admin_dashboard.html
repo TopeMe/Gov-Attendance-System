@@ -112,9 +112,8 @@ footer {
             <h2>Navigation</h2>
             <nav>
                 <ul>
-                    <!--<li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li> -->
-                    <!--<li><a href="{% url 'department' %}">Department</a></li> -->
-                    <!--<li><a href="{% url 'add_employee' %}">Add Employee</a></li> -->
+                    <li><a href="{% url 'departments' %}">Department</a></li> 
+                    <li><a href="{% url 'add_employee' %}">Add Employee</a></li>
                     <!-- Add more navigation items here -->
                 </ul>
             </nav>
@@ -127,14 +126,22 @@ footer {
             
             <section class="dashboard">
                 <div class="dashboard-box">
-                    <h2>Total Employee Checked In</h2>
+                    <h2>Employee Checked In</h2>
                     <p id="total-checked-in">123</p> <!-- Replace with dynamic data -->
                 </div>
                 <div class="dashboard-box">
                     <h2>Absent</h2>
                     <p id="total-absent">45</p> <!-- Replace with dynamic data -->
                 </div>
-                <!-- Add more boxes here -->
+                <div class="dashboard-box">
+                    <h2>Late employees</h2>
+                    <p id="total-late">45</p> <!-- Replace with dynamic data -->
+                </div>
+                <div class="dashboard-box">
+                    <h2>checkout</h2>
+                    <p id="total-absent">45</p> <!-- Replace with dynamic data -->
+                </div>
+                
             </section>
         </main>
     </div>
