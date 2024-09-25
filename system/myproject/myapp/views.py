@@ -48,15 +48,18 @@ def login_view(request):
 
     return render(request, 'login.html')
 
+@login_required
 def departments(request):
     return render(request, 'departments.html')
 
+@login_required
 def reports(request):
     return render(request, 'reports.html')
 
+@login_required
 def add_employee(request):
     return render(request, 'add_employee.html')
 
+@login_required
 def attendance_record(request):
     return render(request, 'attendance_record.html')
-
