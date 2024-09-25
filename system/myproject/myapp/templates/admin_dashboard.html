@@ -1,153 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+{% extends 'index.html' %}
 
-</head>
-<style>
+{% block title %}Attendance{% endblock %}
 
-
-/* General Reset */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Basic Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-.container {
-    display: flex;
-    flex: 1;
-}
-
-.sidebar {
-    background: #333;
-    color: #fff;
-    width: 250px;
-    padding: 20px;
-    height: 100vh; /* Full height sidebar */
-    position: fixed; /* Fixes the sidebar to the left side */
-}
-
-.sidebar h2 {
-    margin-bottom: 20px;
-}
-
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.sidebar nav ul li a:hover {
-    background: #444;
-}
-
-main {
-    margin-left: 250px; /* Pushes content to the right of the sidebar */
-    padding: 20px;
-    background: #fff;
-    flex: 1;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.dashboard {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.dashboard-box {
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    width: calc(50% - 20px);
-    text-align: center;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-
-</style>
-<body>
+{% block content %}
+<section class="home">
     <div class="container">
-        <aside class="sidebar">
-            <h2>Navigation</h2>
-            <nav>
-                <ul>
-                    <li><a href="{% url 'departments' %}">Department</a></li> 
-                    <li><a href="{% url 'add_employee' %}">Add Employee</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <main>
-            <header>
-                <h1>Admin Dashboard</h1>
-            </header>
-            
-            <section class="dashboard">
-                <div class="dashboard-box">
-                    <h2>Employee Checked In</h2>
-                    <p id="total-checked-in">123</p> <!-- Replace with dynamic data -->
-                </div>
-                <div class="dashboard-box">
-                    <h2>Absent</h2>
-                    <p id="total-absent">45</p> <!-- Replace with dynamic data -->
-                </div>
-                <div class="dashboard-box">
-                    <h2>Late employees</h2>
-                    <p id="total-late">45</p> <!-- Replace with dynamic data -->
-                </div>
-                <div class="dashboard-box">
-                    <h2>checkout</h2>
-                    <p id="total-absent">45</p> <!-- Replace with dynamic data -->
-                </div>
-                
-            </section>
-        </main>
+        <div class="box" style="width: 300px; height: 250px;">
+            <h3>Box 1</h3>
+            <p>Content for box 1.</p>
+        </div>
+        <div class="box" style="width: 300px; height: 250px;">
+            <h3>Box 2</h3>
+            <p>Content for box 2.</p>
+        </div>
+        <div class="box" style="width: 300px; height: 250px;">
+            <h3>Box 3</h3>
+            <p>Content for box 3.</p>
+        </div>
+        <div class="box" style="width: 300px; height: 250px;">
+            <h3>Box 4</h3>
+            <p>Content for box 4.</p>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; lei </p>
-    </footer>
-</body>
-</html>
+</section>
+{% endblock %}

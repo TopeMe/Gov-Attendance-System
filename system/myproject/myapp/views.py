@@ -16,11 +16,7 @@ def punch_page(request):
         print(name)
     return render(request, 'punch.html')
 
-def departments(request):
-    return render(request, 'departments.html')
 
-def add_employee(request):
-    return render(request, 'add_employee.html')
 
 @login_required
 def admin_dashboard_view(request):
@@ -51,4 +47,16 @@ def login_view(request):
         return redirect('admin_dashboard')
 
     return render(request, 'login.html')
+
+def departments(request):
+    return render(request, 'departments.html')
+
+def reports(request):
+    return render(request, 'reports.html')
+
+def add_employee(request):
+    return render(request, 'add_employee.html')
+
+def attendance_record(request):
+    return render(request, 'attendance_record.html')
 
