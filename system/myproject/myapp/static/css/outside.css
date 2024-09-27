@@ -85,5 +85,10 @@ body {
     background-color: #050505ea;
   }
   
-  
+  .clock{
+    color: white;
+    background-color: #9c1c1c;
+    bottom: 500px ;
+    position: relative; 
+  }
   

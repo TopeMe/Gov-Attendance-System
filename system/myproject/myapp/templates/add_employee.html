@@ -3,7 +3,33 @@
 {% block title %}Employee{% endblock %}
 
 {% block content %}
+
 <section class="home">
-    <p>Add Employee</p>
+    <h2>Employee Registration Form</h2>
+
+    <div class="form-container">
+    <h3>Employee Registration</h3>
+    <form action="/submit" method="POST">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="employeeId" required>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="" disabled selected>Select a department</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Sales">Sales</option>
+            <option value="Marketing">Marketing</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
 </section>
 {% endblock %}
