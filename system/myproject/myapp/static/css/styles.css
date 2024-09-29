@@ -342,8 +342,10 @@ button:hover {
   margin-bottom: 1rem;
   background-color: transparent;
   border-collapse: collapse;
-  margin-left: 200px;
+  margin-left: 300px;
+  margin-top: 00px;
 }
+
 
 .table th, .table td {
   padding: 0.75rem;
@@ -388,6 +390,8 @@ button:hover {
   background-color: #f8f9fa;
   text-align: center;
 }
+
+
 
 
 
