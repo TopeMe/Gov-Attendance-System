@@ -5,31 +5,30 @@
 {% block content %}
 
 <section class="home">
-    <h2>Employee Registration Form</h2>
+    <p>Employee Registration Form</p>
 
     <div class="form-container">
-    <h3>Employee Registration</h3>
-    <form action="/submit" method="POST">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
+        <form action="/submit" method="POST">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
 
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
 
-        <label for="employeeId">Employee ID:</label>
-        <input type="text" id="employeeId" name="employeeId" required>
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" name="employeeId" required>
 
-        <label for="department">Department:</label>
-        <select id="department" name="department" required>
-            <option value="" disabled selected>Select a department</option>
-            <option value="HR">HR</option>
-            <option value="IT">IT</option>
-            <option value="Sales">Sales</option>
-            <option value="Marketing">Marketing</option>
-        </select>
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="" disabled selected>Select a department</option>
+                {% for department in departments %}
+                    <option value="{{ department.name }}">{{ department.name }}</option>
+                {% endfor %}
+            </select>
 
-        <button type="submit">Submit</button>
-    </form>
-</div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </section>
+
 {% endblock %}

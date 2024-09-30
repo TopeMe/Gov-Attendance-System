@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8*4r*h5n)l^wq-r#r=762u2%@v6wph2qc*=nwl-gk3))g(#&um'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY W
+# ARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -118,7 +119,9 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
+   
     os.path.join(BASE_DIR, 'myapp', 'static'),  # Update to the correct path
 ]
 

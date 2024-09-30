@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
+from .models import Department
 
 User = get_user_model()
 user = User.objects.get(username='admin')  # Replace with your username
@@ -63,3 +64,10 @@ def add_employee(request):
 @login_required
 def attendance_record(request):
     return render(request, 'attendance_record.html')
+
+def employee_registration(request):
+    # Fetch all departments from the database
+    departments = Department.objects.all()
+
+    # Render the template with the departments
+    return render(request, 'add_employee.html', {'departments': departments})

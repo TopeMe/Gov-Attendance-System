@@ -304,9 +304,10 @@
 .form-container {
   background-color: rgb(216, 216, 216);
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  border-radius: 15px;
+  box-shadow: 20px 5px 20px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 100%;
   margin: 0 auto;
   margin-top: 100px !important;
  
@@ -342,8 +343,8 @@ button:hover {
   margin-bottom: 1rem;
   background-color: transparent;
   border-collapse: collapse;
-  margin-left: 300px;
-  margin-top: 00px;
+  margin-left: 200px;
+  margin-top: 90px;
 }
 
 
