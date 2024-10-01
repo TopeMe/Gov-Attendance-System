@@ -59,7 +59,18 @@ def reports(request):
 
 @login_required
 def add_employee(request):
-    return render(request, 'add_employee.html')
+    departments = Department.DEPARTMENT_CHOICES
+    if request.method == "POST":
+        first_name = request.POST.get("firstName")
+        last_name = request.POST.get('lastName')
+        print(last_name)
+    context = {
+        "departments" : departments 
+    }
+    
+    #department 1
+    departmentOne = Department.objects.filter(name="January")
+    return render(request, 'add_employee.html', context)
 
 @login_required
 def attendance_record(request):
