@@ -69,7 +69,8 @@ def add_employee(request):
     }
     
     #department 1
-    departmentOne = Department.objects.filter(name="January")
+    #departmentOne = Department.objects.filter(department_name="depOne")
+    #checkins = Emplo
     return render(request, 'add_employee.html', context)
 
 @login_required

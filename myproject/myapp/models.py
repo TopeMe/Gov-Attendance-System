@@ -9,8 +9,7 @@ class Department(models.Model):
         ("DECEMBER", "December"),
     )
 
-    name = models.CharField(max_length=100, choices= DEPARTMENT_CHOICES, default="JANUARY")
-    parent_department = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='sub_departments')
+    department_name = models.CharField(max_length=100, choices= DEPARTMENT_CHOICES, default="JANUARY")
 
     def __str__(self):
         return self.name
@@ -22,5 +21,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+  
+    
 
 
