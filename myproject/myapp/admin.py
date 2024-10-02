@@ -3,9 +3,7 @@ from .models import Department
 
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-
+    list_display = ('department_name',) 
 
 
 #@admin.register(Employee)

@@ -7,6 +7,7 @@
   font-family: "Poppins", sans-serif;
   --color-hover: rgb(32, 59, 232);
   --transition: all 0.2s ease;
+
 }
 
 :root {
@@ -297,10 +298,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-
 .form-container {
   background-color: rgb(216, 216, 216);
   padding: 20px;
@@ -310,29 +307,37 @@
   height: 100%;
   margin: 0 auto;
   margin-top: 100px !important;
- 
-  
 }
+
 label {
   display: block;
   margin-top: 10px;
 }
+
 input, select {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
 }
+
+
+
 button {
   margin-top: 15px;
   padding: 10px;
-  background-color:rgb(32, 59, 232);
+  background-color: rgb(32, 59, 232);
   color: white;
   border: none;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #45a049;
 }
+
+
+
+
 
 
 

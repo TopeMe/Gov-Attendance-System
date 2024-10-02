@@ -77,9 +77,8 @@ def add_employee(request):
 def attendance_record(request):
     return render(request, 'attendance_record.html')
 
-def employee_registration(request):
-    # Fetch all departments from the database
-    departments = Department.objects.all()
+def employee_registration_view(request):
+    departments = Department.objects.all()  # Fetch all departments
+    print(departments)
 
-    # Render the template with the departments
     return render(request, 'add_employee.html', {'departments': departments})
