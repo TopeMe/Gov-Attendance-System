@@ -11,11 +11,14 @@ user = User.objects.get(username='admin')  # Replace with your username
 print(user.password)  # This will show a hash, confirming the user exists.
 
 
-def punch_page(request):
+def checkin(request):
     if request.method == 'POST':
         name = request.POST.get("employee_name")
         print(name)
-    return render(request, 'punch.html')
+    return render(request, 'checkin.html')
+
+def checkout(request):
+    return render(request, 'checkout.html')
 
 
 
@@ -79,6 +82,4 @@ def attendance_record(request):
 
 def employee_registration_view(request):
     departments = Department.objects.all()  # Fetch all departments
-    print(departments)
-
     return render(request, 'add_employee.html', {'departments': departments})

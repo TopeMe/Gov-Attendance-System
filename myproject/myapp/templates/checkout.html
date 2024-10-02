@@ -8,19 +8,17 @@
     <link rel="stylesheet" href="{% static 'css/outside.css' %}">
 </head>
 
-<body>
+<body>  
     
     <div class="form-container">
-        <form action="{% url 'punch_page' %}" id="checkin-form" method="POST">
+        <form action="{% url 'checkout_page' %}" id="checkout-form" method="POST">
             {% csrf_token %}
             <h2>EMPLOYEE'S NAME</h2>
             <input type="text" name="employee_name" id="employee-name" placeholder="NAME" required>
-            <button type="submit" id="checkin-btn">Check In</button>
+            <button type="submit" id="checkin-btn">Check out</button>
         </form>
     
-   
 
-        
         
     </div>
 

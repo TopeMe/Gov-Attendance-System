@@ -18,21 +18,40 @@ class Department(models.Model):
     department_name = models.CharField(
         max_length=100, 
         choices=DEPARTMENT_CHOICES, 
-        default="CITY_ACCOUNTANT"  # Use the correct key from DEPARTMENT_CHOICES
+        default="CITY_ACCOUNTANT"
     )
 
     def __str__(self):
         return self.get_department_name_display()
 
-
-
-# Employee Model
 class Employee(models.Model):
-    employee_id = models.CharField(max_length=10, unique=True)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-  
-    
+    name = models.CharField(max_length=100)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
+
+    def __str__(self):
+        return self.name
+
+class Attendance(models.Model):
+    STATUS_CHOICES = (
+        ("PRESENT", "Present"),
+        ("ABSENT", "Absent"),
+        ("LATE", "Late"),
+    )
+
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='attendances')
+    check_in = models.DateTimeField()
+    check_out = models.DateTimeField(null=True, blank=True)
+    date = models.DateField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+
+    def __str__(self):
+        return f"{self.employee.name} - {self.date} - {self.status}"
 
 
+class AttendanceRecord(models.Model):
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='attendance_records')
+    attendance = models.ForeignKey(Attendance, on_delete=models.CASCADE, related_name='attendance_records')
+    record_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Record for {self.employee.name} on {self.attendance.date}"
