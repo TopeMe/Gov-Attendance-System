@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
-from .models import Department
+from .models import Department, Employee
 
 User = get_user_model()
 user = User.objects.get(username='admin')  # Replace with your username
@@ -62,24 +62,38 @@ def reports(request):
 
 @login_required
 def add_employee(request):
-    departments = Department.DEPARTMENT_CHOICES
+    departments = Department.objects.all()  # Fetch all departments
+    
     if request.method == "POST":
+        employee_id = request.POST.get("employeeId")
         first_name = request.POST.get("firstName")
-        last_name = request.POST.get('lastName')
-        print(last_name)
+        last_name = request.POST.get("lastName")
+        department_id = request.POST.get("department")
+
+        # Fetch the department instance
+        department = Department.objects.get(id=department_id)
+
+        # Create a new employee instance
+        new_employee = Employee(
+            employee_id=employee_id,
+            first_name=first_name,
+            last_name=last_name,
+            department=department  # Use the department instance here
+        )
+        new_employee.save()
+
+        # Redirect back to the form to add another employee
+        return redirect('add_employee')  # Assuming you have a URL pattern named 'add_employee'
+
     context = {
-        "departments" : departments 
+        "departments": departments
     }
     
-    #department 1
-    #departmentOne = Department.objects.filter(department_name="depOne")
-    #checkins = Emplo
     return render(request, 'add_employee.html', context)
+
+
 
 @login_required
 def attendance_record(request):
     return render(request, 'attendance_record.html')
 
-def employee_registration_view(request):
-    departments = Department.objects.all()  # Fetch all departments
-    return render(request, 'add_employee.html', {'departments': departments})

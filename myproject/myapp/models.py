@@ -16,8 +16,8 @@ class Department(models.Model):
     )
 
     department_name = models.CharField(
-        max_length=100, 
-        choices=DEPARTMENT_CHOICES, 
+        max_length=100,
+        choices=DEPARTMENT_CHOICES,
         default="CITY_ACCOUNTANT"
     )
 
@@ -25,11 +25,17 @@ class Department(models.Model):
         return self.get_department_name_display()
 
 class Employee(models.Model):
-    name = models.CharField(max_length=100)
+    employee_id = models.CharField(max_length=50, unique=True, default='12345')  # Set a sensible default
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
 
     def __str__(self):
-        return self.name
+        return f"{self.first_name} {self.last_name}"
+
+
+
+
 
 class Attendance(models.Model):
     STATUS_CHOICES = (
