@@ -62,23 +62,23 @@ def reports(request):
 
 @login_required
 def add_employee(request):
-    departments = Department.objects.all()  # Fetch all departments
-    
+    departments = Department.DEPARTMENT_CHOICES# Fetch all departments
+    print(departments)
     if request.method == "POST":
         employee_id = request.POST.get("employeeId")
         first_name = request.POST.get("firstName")
         last_name = request.POST.get("lastName")
         department_id = request.POST.get("department")
 
-        # Fetch the department instance
-        department = Department.objects.get(id=department_id)
+        # # Fetch the department instance
+        # department = Department.objects.get(id=department_id)
 
         # Create a new employee instance
         new_employee = Employee(
             employee_id=employee_id,
             first_name=first_name,
             last_name=last_name,
-            department=department  # Use the department instance here
+            #department=department  # Use the department instance here
         )
         new_employee.save()
 

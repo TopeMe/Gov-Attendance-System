@@ -22,11 +22,11 @@
             <label for="department">Department:</label>
             <select id="department" name="department" required>
                 <option value="" disabled selected>Select a department</option>
-                {% for department in departments %}
-                    <option value="{{ department.id }}">{{ department.get_department_name_display }}</option>
-                {% empty %}
-                    <option value="" disabled>No departments available</option>
-                {% endfor %}
+                    {% for key, value in departments %}
+                        <option value="{{ forloop.counter }}">{{ value }}</option>
+                    {% empty %}
+                        <option value="">No departments available</option>
+                    {% endfor %}
             </select>
             
         
