@@ -23,7 +23,7 @@
             <select id="department" name="department" required>
                 <option value="" disabled selected>Select a department</option>
                 {% for department in departments %}
-                    <option value="{{ department.id }}">{{ department.get_department_name_display }}</option>
+                    <option value="{{ department.department_name }}">{{ department.get_department_name_display }}</option>
                 {% empty %}
                     <option value="" disabled>No departments available</option>
                 {% endfor %}
