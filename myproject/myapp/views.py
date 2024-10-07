@@ -68,10 +68,11 @@ def add_employee(request):
         employee_id = request.POST.get("employeeId")
         first_name = request.POST.get("firstName")
         last_name = request.POST.get("lastName")
-        department_id = request.POST.get("department")
+        department_name = request.POST.get("department")
 
-        # # Fetch the department instance
-        # department = Department.objects.get(id=department_id)
+        # Fetch the department instance
+        department = Department.objects.get(department_name=department_name)
+
 
         # Create a new employee instance
         department = Department.objects.get(id=department_id)
