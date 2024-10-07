@@ -74,11 +74,12 @@ def add_employee(request):
         # department = Department.objects.get(id=department_id)
 
         # Create a new employee instance
+        department = Department.objects.get(id=department_id)
         new_employee = Employee(
             employee_id=employee_id,
             first_name=first_name,
             last_name=last_name,
-            #department=department  # Use the department instance here
+            department_name=department
         )
         new_employee.save()
 

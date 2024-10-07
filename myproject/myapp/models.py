@@ -25,15 +25,14 @@ class Department(models.Model):
         return self.get_department_name_display()
 
 class Employee(models.Model):
-    employee_id = models.CharField(max_length=50, unique=True, default='12345')  # Set a sensible default
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
+    
+    employee_id = models.CharField(max_length=100, unique=True, default='12345')  # Set a sensible default
+    first_name = models.CharField(max_length=120)
+    last_name = models.CharField(max_length=120)
+    department_name = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='employees')
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
-
-
 
 
 
